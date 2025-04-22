@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EAUCinema - Book Your Seat</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Lato', Arial, sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    header {
+      background-color: #990000;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header img {
+      height: 80px;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      background-color: #990000;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .container {
+      padding: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .movie-card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .movie-card img {
+      width: 150px;
+      border-radius: 8px;
+    }
+
+    body {
+  background-color: #ffffff;
+  color: #333;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+    .movie-card button {
+      padding: 10px 20px;
+      background-color: #990000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .form-section {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin: 40px auto;
+      max-width: 600px;
+    }
+
+    .form-section input,
+    .form-section select,
+    .form-section textarea {
+      padding: 10px;
+      margin: 10px 0;
+      width: 100%;
+      border: 1px solid #990000;
+      border-radius: 5px;
+    }
+
+    .form-section button {
+      background-color: #990000;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 10px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    /* Upcoming Movies Scroll Section */
+    .scroll-section {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    .scroll-container {
+      display: flex;
+      gap: 20px;
+      animation: scroll-left 30s linear infinite;
+    }
+
+    .scroll-card {
+      flex: 0 0 auto;
+      width: 200px;
+      height: 300px;
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .scroll-card img {
+      width: 100%;
+      height: 80%;
+      object-fit: cover;
+    }
+
+    .scroll-card p {
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    footer {
+      background-color: #990000;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 5px;
+    }
+
+    @media (max-width: 768px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .movie-card {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .scroll-card {
+        width: 150px;
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+  <header>
+    <img src="logo2.svg" alt="EAUCinema Logo">
+    <h1>EAUCinema</h1>
+    <p>Book your seat for university movie nights!</p>
+  </header>
+
+  <nav>
+    <a href="#top">Home</a>
+    <a href="#booking">Book Now</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <!-- Movie Cards -->
+    <div class="movie-card">
+      <img src="inception.jpg" alt="Inception Poster">
+      <div>
+        <h2>Movie: Inception</h2>
+        <p>Time: 7:00 PM, April 25</p>
+        <p>Location: EA University Auditorium</p>
+        <a href="#booking"><button>Book Seat</button></a>
+      </div>
+    </div>
+
+    <div class="movie-card">
+      <img src="inception.jpg" alt="Inception Poster">
+      <div>
+        <h2>Movie: Inception</h2>
+        <p>Time: 6:00 PM, May 2</p>
+        <p>Location: EA University Auditorium</p>
+        <a href="#booking"><button>Book Seat</button></a>
+      </div>
+    </div>
+
+    <div class="movie-card">
+      <img src="interstellar.jpg" alt="Interstellar Poster">
+      <div>
+        <h2>Movie: Interstellar</h2>
+        <p>Time: 8:30 PM, May 3</p>
+        <p>Location: EA University Auditorium</p>
+        <a href="#booking"><button>Book Seat</button></a>
+      </div>
+    </div>
+
+    <div class="movie-card">
+      <img src="martian.jpg" alt="The Martian Poster">
+      <div>
+        <h2>Movie: The Martian</h2>
+        <p>Time: 4:30 PM, April 26</p>
+        <p>Location: EA University Auditorium</p>
+        <a href="#booking"><button>Book Seat</button></a>
+      </div>
+    </div>
+
+    <!-- Booking Form -->
+    <div class="form-section" id="booking">
+      <h2>Booking Form</h2>
+      <form>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required>
+
+        <label for="id">University ID</label>
+        <input type="text" id="id" required>
+
+        <label for="movie">Select Movie</label>
+        <select id="movie" required>
+          <option value="">--Choose a Movie--</option>
+          <option value="Inception">Inception</option>
+          <option value="Interstellar">Interstellar</option>
+          <option value="The Martian">The Martian</option>
+        </select>
+
+
+        <label for="date">Select Date</label>
+        <select id="date" required>
+          <option value="">--Choose a Date--</option>
+          <option>April 25</option>
+          <option>April 26</option>
+          <option>May 2</option>
+          <option>May 3</option>
+          <option>May 4</option>
+        </select>
+
+        <label for="time">Select Time</label>
+<select id="time" required>
+  <option value="">--Choose a Time--</option>
+</select>
+
+
+        <label for="seats">Number of Seats</label>
+        <input type="number" id="seats" min="1" max="5" required>
+
+        <button type="submit">Confirm Booking</button>
+        <p id="booking-confirmation" style="display: none; color: green; font-weight: bold; margin-top: 15px;"></p>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Upcoming Movies Scroll -->
+  <div class="scroll-section">
+    <div class="scroll-container">
+      <div class="scroll-card"><img src="upcoming1.jpg"><p>Avatar 2</p></div>
+      <div class="scroll-card"><img src="upcoming2.jpg"><p>Oppenheimer</p></div>
+      <div class="scroll-card"><img src="upcoming3.jpg"><p>Dune II</p></div>
+      <div class="scroll-card"><img src="upcoming4.jpg"><p>Joker 2</p></div>
+      <div class="scroll-card"><img src="upcoming5.jpg"><p>Mission: Impossible</p></div>
+      <div class="scroll-card"><img src="upcoming6.jpg"><p>Barbie</p></div>
+      <div class="scroll-card"><img src="diehard.jpg"><p>Die Hard</p></div>
+      <div class="scroll-card"><img src="upcoming1.jpg"><p>Avatar 2</p></div>
+      <div class="scroll-card"><img src="upcoming2.jpg"><p>Oppenheimer</p></div>
+      <div class="scroll-card"><img src="upcoming3.jpg"><p>Dune II</p></div>
+      <div class="scroll-card"><img src="upcoming4.jpg"><p>Joker 2</p></div>
+      <div class="scroll-card"><img src="upcoming5.jpg"><p>Mission: Impossible</p></div>
+      <div class="scroll-card"><img src="upcoming6.jpg"><p>Barbie</p></div>
+      <div class="scroll-card"><img src="diehard.jpg"><p>Die Hard</p></div>
+      <div class="scroll-card"><img src="upcoming1.jpg"><p>Avatar 2</p></div>
+      <div class="scroll-card"><img src="upcoming2.jpg"><p>Oppenheimer</p></div>
+      <div class="scroll-card"><img src="upcoming3.jpg"><p>Dune II</p></div>
+      <div class="scroll-card"><img src="upcoming4.jpg"><p>Joker 2</p></div>
+      <div class="scroll-card"><img src="upcoming5.jpg"><p>Mission: Impossible</p></div>
+      <div class="scroll-card"><img src="upcoming6.jpg"><p>Barbie</p></div>
+      <div class="scroll-card"><img src="diehard.jpg"><p>Die Hard</p></div>
+      <div class="scroll-card"><img src="upcoming1.jpg"><p>Avatar 2</p></div>
+      <div class="scroll-card"><img src="upcoming2.jpg"><p>Oppenheimer</p></div>
+      <div class="scroll-card"><img src="upcoming3.jpg"><p>Dune II</p></div>
+      <div class="scroll-card"><img src="upcoming4.jpg"><p>Joker 2</p></div>
+      <div class="scroll-card"><img src="upcoming5.jpg"><p>Mission: Impossible</p></div>
+      <div class="scroll-card"><img src="upcoming6.jpg"><p>Barbie</p></div>
+      <div class="scroll-card"><img src="diehard.jpg"><p>Die Hard</p></div>
+      <div class="scroll-card"><img src="upcoming1.jpg"><p>Avatar 2</p></div>
+      <div class="scroll-card"><img src="upcoming2.jpg"><p>Oppenheimer</p></div>
+      <div class="scroll-card"><img src="upcoming3.jpg"><p>Dune II</p></div>
+      <div class="scroll-card"><img src="upcoming4.jpg"><p>Joker 2</p></div>
+      <div class="scroll-card"><img src="upcoming5.jpg"><p>Mission: Impossible</p></div>
+      <div class="scroll-card"><img src="upcoming6.jpg"><p>Barbie</p></div>
+      <div class="scroll-card"><img src="diehard.jpg"><p>Die Hard</p></div>
+
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="form-section" id="contact">
+    <h2 style="text-align: center;">Contact Us</h2>
+    <form id="contact-form">
+  <label for="contact-name">Full Name</label>
+  <input type="text" id="contact-name" required>
+
+  <label for="contact-email">Email</label>
+  <input type="email" id="contact-email" required>
+
+  <label for="message">Message</label>
+  <textarea id="message" rows="4" required></textarea>
+
+  <button type="submit">Send Message</button>
+
+  <p id="thank-you-message" style="color: green; font-weight: bold; display: none; margin-top: 10px;">
+    Thank you for contacting us!
+  </p>
+</form>
+
+
+  </div>
+
+  <nav style="margin-top: 5px;">
+  <a href="#top">Home</a>
+  <a href="#booking">Book Now</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+  <footer id="footer">
+    <p>Contact us at cinema@eau.ac.ae | EAUCinema &copy; 2025</p>
+  </footer>
+
+  <!-- Booking confirmation script -->
+  <script>
+    document.querySelector("#booking form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const id = document.getElementById("id").value.trim();
+      const movie = document.getElementById("movie").value;
+      const date = document.getElementById("date").value;
+      const time = document.getElementById("time").value;
+      const seats = document.getElementById("seats").value;
+
+      if (name && id && movie && date && time && seats) {
+        const confirmation = document.getElementById("booking-confirmation");
+confirmation.innerHTML =
+  "<strong>Booking Confirmed!</strong><br>" +
+  `Name: ${name}<br>` +
+  `ID: ${id}<br>` +
+  `Movie: ${movie}<br>` +
+  `Date: ${date}<br>` +
+  `Time: ${time}<br>` +
+  `Seats: ${seats}`;
+confirmation.style.display = "block";
+
+        this.reset();
+      } else {
+        alert("Please fill in all fields before confirming.");
+      }
+    });
+  </script>
+  <script>
+  const movieTimes = {
+    "Inception": ["7:00 PM", "6:00 PM"],
+    "Interstellar": ["8:30 PM"],
+    "The Martian": ["4:30 PM"]
+  };
+
+  const movieSelect = document.getElementById("movie");
+  const timeSelect = document.getElementById("time");
+
+  movieSelect.addEventListener("change", function () {
+    const selectedMovie = this.value;
+    timeSelect.innerHTML = '<option value="">--Choose a Time--</option>';
+
+    if (movieTimes[selectedMovie]) {
+      movieTimes[selectedMovie].forEach(time => {
+        const option = document.createElement("option");
+        option.value = time;
+        option.textContent = time;
+        timeSelect.appendChild(option);
+      });
+    }
+  });
+</script>
+<script>
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("contact-name").value.trim();
+    const email = document.getElementById("contact-email").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const thankYouMsg = document.getElementById("thank-you-message");
+
+    if (name && email && message) {
+      thankYouMsg.style.display = "block"; // show message
+      this.reset(); // clear form
+    } else {
+      thankYouMsg.style.display = "none";
+      alert("Please fill in all fields.");
+    }
+  });
+</script>
+
+
+</body>
+</html>
